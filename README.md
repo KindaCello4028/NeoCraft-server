@@ -143,7 +143,229 @@ worldguard.region.*
 ---
 
 ## 管理与世界控制插件
-（待补充）
+> 用于多世界管理、传送、地皮、领地、公会等功能的插件，帮助服主控制地图结构与玩家活动范围。
+
+
+
+
+---
+
+Multiverse-Core
+
+功能介绍
+多世界管理插件，可创建、加载、卸载、删除多个世界，并支持世界间传送。
+
+常用命令
+
+/mv create <世界名> <环境> [类型]   # 创建世界
+/mv delete <世界名>                 # 删除世界
+/mv tp <玩家> <世界名>               # 传送玩家到指定世界
+/mv list                             # 列出所有世界
+
+常用权限
+
+multiverse.core.*       # 所有 Multiverse-Core 权限
+
+配置要点
+
+建议配合 Multiverse-Portals 或菜单插件实现便捷传送
+
+不同世界可使用不同的游戏模式与规则
+
+
+链接
+
+SpigotMC
+
+
+
+
+---
+
+Residence
+
+功能介绍
+玩家自助领地保护系统，可防止破坏、盗窃和怪物破坏。
+
+常用命令
+
+/res create <领地名>         # 创建领地
+/res remove <领地名>         # 删除领地
+/res tp <领地名>             # 传送到领地
+/res set <flag> true/false   # 设置领地权限
+
+常用权限
+
+residence.admin.*           # 管理员控制全部领地
+residence.create            # 创建领地
+
+配置要点
+
+与经济插件结合可收取领地费用
+
+可限制领地最大尺寸与数量
+
+
+链接
+
+SpigotMC
+
+
+
+
+---
+
+EssentialsX 系列
+
+功能介绍
+多功能插件集合，提供基础命令（回家、传送、信息查询）、玩家管理（踢人、封禁）、经济系统等功能。
+
+常用命令
+
+/spawn                      # 回出生点
+/home <名字>                # 回家
+/sethome <名字>             # 设置家
+/tp <玩家>                  # 传送到玩家
+/msg <玩家> <信息>           # 私聊
+
+常用权限
+
+essentials.*                # 所有 EssentialsX 权限
+essentials.tp               # 传送权限
+essentials.kick             # 踢人权限
+
+配置要点
+
+通过 config.yml 启用/禁用不需要的命令
+
+经济部分建议与 Vault 搭配使用
+
+
+链接
+
+EssentialsX 官网
+
+
+
+
+---
+
+DeluxeMenus
+
+功能介绍
+自定义 GUI 菜单插件，可用于商店、传送、信息展示等功能。
+
+常用命令
+
+/dm reload                  # 重载菜单配置
+
+常用权限
+
+deluxemenus.admin           # 管理菜单
+
+配置要点
+
+配置文件使用 YAML 格式，可绑定命令、权限检查、占位符显示
+
+依赖 PlaceholderAPI 获取动态数据
+
+
+链接
+
+SpigotMC
+
+
+
+
+---
+
+PlayerPoints
+
+功能介绍
+积分系统插件，可与商店、菜单、任务系统绑定，作为非经济货币。
+
+常用命令
+
+/points give <玩家> <数量>   # 增加积分
+/points take <玩家> <数量>   # 扣除积分
+/points me                  # 查看自己积分
+
+常用权限
+
+playerpoints.admin          # 管理积分
+
+配置要点
+
+可作为 DeluxeMenus / QuickShop 等插件的支付方式
+
+支持 MySQL 存储
+
+
+链接
+
+SpigotMC
+
+
+
+
+---
+
+QuickShop-Hikari
+
+功能介绍
+高性能的玩家商店插件，支持购买/出售方块、物品。
+
+常用命令
+
+/qs create buy/sell <价格>   # 创建商店
+/qs remove                   # 删除商店
+
+常用权限
+
+quickshop.create             # 创建商店
+quickshop.remove             # 删除商店
+
+配置要点
+
+依赖 Vault + 经济插件
+
+可限制商店创建位置（如仅在安全区）
+
+
+链接
+
+SpigotMC
+
+
+
+
+---
+
+SagaGuild
+
+功能介绍
+公会系统插件，支持公会创建、成员管理、领地等。
+
+常用命令
+
+/guild create <名字>         # 创建公会
+/guild invite <玩家>         # 邀请成员
+/guild claim                 # 公会领地
+
+常用权限
+
+sagaguild.admin              # 公会管理权限
+
+配置要点
+
+可与经济插件绑定收取公会维护费
+
+建议结合 WorldGuard / Residence 做领地保护
+
+
+
+
+---
 
 ## Slimefun 主体与附属插件
 （待补充）

@@ -23,7 +23,8 @@
 6. [基岩版互通设置](#基岩版互通设置)
 7. [性能与安全优化](#性能与安全优化)
 8. [命令与权限大全](#命令与权限大全)
-9. [插件下载与更新链接](#插件下载与更新链接)
+9. [全插件命令与权限大全](#全插件命令与权限大全)
+10. [插件下载与更新链接](#插件下载与更新链接)
 
 ---
 
@@ -1246,6 +1247,104 @@ Slimefun 附属，提供额外物品与机器（此处归为辅助类）。
 | [AuthMe](#authme--litesignin) | `/login <密码>` | `authme.player` | 玩家登录 |
 | [AuthMe](#authme--litesignin) | `/register <密码> <确认密码>` | `authme.player` | 玩家注册 |
 | [AuthMe](#authme--litesignin) | `/authme reload` | `authme.admin` | 重载配置 |
+---
+## 全插件命令与权限大全
+> 本表列出了服务器全部 153 个插件的基本信息与功能分类。  
+> 后续可在命令与权限列中补充具体指令与权限节点。
+
+| 插件名称 | 插件类型 | 主要命令 | 权限节点 | 功能简述 |
+|----------|----------|----------|----------|----------|
+| LuckPerms | 核心 | `/lp ...` | `luckperms.*` | 权限管理系统 |
+| Vault | 核心依赖 | 无 | 无 | 提供权限/经济 API |
+| Multiverse-Core | 管理 | `/mv ...` | `multiverse.*` | 多世界管理 |
+| Residence | 功能 | `/res ...` | `residence.*` | 玩家领地保护 |
+| EssentialsX | 功能 | `/spawn` 等 | `essentials.*` | 基础命令集合 |
+| DeluxeMenus | 功能 | `/dm reload` | `deluxemenus.admin` | 自定义菜单 |
+| PlayerPoints | 功能 | `/points ...` | `playerpoints.*` | 积分系统 |
+| QuickShop-Hikari | 功能 | `/qs ...` | `quickshop.*` | 玩家商店 |
+| Slimefun | 主体玩法 | `/sf ...` | `slimefun.*` | 科技玩法核心 |
+| InfinityExpansion | 附属 | 无 | 无 | 高端科技扩展 |
+| ExoticGarden | 附属 | 无 | 无 | 新作物与食物 |
+| DynaTech | 附属 | 无 | 无 | 独特机器扩展 |
+| FinalTECH | 附属 | 无 | 无 | 高性能科技 |
+| SlimyBees | 附属 | 无 | 无 | 蜜蜂养殖 |
+| SlimyTreeTaps | 附属 | 无 | 无 | 树液收集 |
+| SlimeTinker | 附属 | 无 | 无 | 工具定制 |
+| SlimefunOreChunks | 附属 | 无 | 无 | 矿石碎片系统 |
+| SlimefunLuckyBlocks | 附属 | 无 | 无 | 幸运方块 |
+| SlimeVision | 附属 | 无 | 无 | 视觉增强 |
+| SlimefunWarfare | 附属 | 无 | 无 | 科技战斗 |
+| CustomNPCs | 功能 | `/npc ...` | `customnpcs.admin` | 自定义 NPC |
+| BetterStructures | 功能 | 无 | 无 | 随机生成建筑 |
+| QualityArmory | 功能 | `/qa ...` | `qualityarmory.*` | 枪械系统 |
+| SagaGuild | 功能 | `/guild ...` | `sagaguild.*` | 公会系统 |
+| TerraformGenerator | 功能 | 无 | 无 | 自定义地形生成 |
+| VillagerTrade | 功能 | 无 | 无 | 自定义村民交易 |
+| VillagerUtil | 功能 | 无 | 无 | 村民行为管理 |
+| ClearLag | 优化 | `/lagg ...` | `clearlag.*` | 清理实体 |
+| CoreProtect | 管理 | `/co ...` | `coreprotect.*` | 方块/物品日志 |
+| PlugManX | 管理 | `/plugman ...` | `plugman.*` | 插件热加载 |
+| ProtocolLib | 核心依赖 | 无 | 无 | 数据包 API |
+| SkinsRestorer | 功能 | `/skin ...` | `skinsrestorer.*` | 离线皮肤 |
+| TAB | 功能 | `/tab ...` | `tab.*` | 自定义 Tab 列表 |
+| LiteSignIn | 功能 | `/signin` | `litesignin.*` | 签到系统 |
+| LiteXpansion | 附属 | 无 | 无 | Slimefun 扩展 |
+| UseTranslatedNames | 功能 | 无 | 无 | 显示翻译名称 |
+| ViewSlimeChunk | 功能 | 无 | 无 | 显示史莱姆区块 |
+| NoCreeperCraters | 功能 | 无 | 无 | 防止苦力怕破坏 |
+| Geyser-Spigot | 基岩互通 | `/geyser ...` | `geyser.*` | 基岩版互通 |
+| Floodgate | 基岩互通 | `/floodgate ...` | `floodgate.*` | 基岩免登录 |
+| AuthMe | 功能 | `/login` 等 | `authme.*` | 登录验证 |
+| ViaVersion | 核心依赖 | 无 | 无 | 跨版本支持 |
+| ViaBackwards | 核心依赖 | 无 | 无 | 高版本客户端支持 |
+| WorldEdit | 管理 | `//...` | `worldedit.*` | 地图编辑 |
+| WorldGuard | 管理 | `/rg ...` | `worldguard.*` | 区域保护 |
+| PlaceholderAPI | 核心依赖 | 无 | 无 | 占位符支持 |
+| CMILib | 核心依赖 | 无 | 无 | CMI 公共库 |
+| GSit | 功能 | `/sit` | `gsit.sit` | 坐下/趴下动作 |
+| GroupManager | 管理 | `/manuadd` 等 | `groupmanager.*` | 权限组管理 |
+| AttackCooldownRemover | 功能 | 无 | 无 | 移除攻击冷却 |
+| AlchimiaVitae | 功能 | 无 | 无 | 自定义炼金玩法 |
+| BetterReactor | 附属 | 无 | 无 | 高效反应堆 |
+| EcoPower | 附属 | 无 | 无 | 环保能源 |
+| UltimateGenerators2 | 附属 | 无 | 无 | 高级发电机 |
+| EnderCargo | 附属 | 无 | 无 | 末影传输 |
+| ElectricSpawners | 附属 | 无 | 无 | 电力刷怪笼 |
+| Quaptics | 附属 | 无 | 无 | 量子科技 |
+| ObsidianExpansion | 附属 | 无 | 无 | 黑曜石科技 |
+| Liquid | 附属 | 无 | 无 | 液体系统 |
+| ElementManipulation | 附属 | 无 | 无 | 元素操控 |
+| Gastronomicon | 附属 | 无 | 无 | 美食扩展 |
+| GeneticChickengineering | 附属 | 无 | 无 | 基因鸡养殖 |
+| Galactifun | 附属 | 无 | 无 | 太空科技 |
+| ExtraHeads | 附属 | 无 | 无 | 更多头颅 |
+| ExtraGear | 附属 | 无 | 无 | 额外装备 |
+| ExtraTools | 附属 | 无 | 无 | 新工具 |
+| RelicsOfCthonia | 附属 | 无 | 无 | 神秘遗物 |
+| SpiritsUnchained | 附属 | 无 | 无 | 灵魂装备 |
+| SoulJars | 附属 | 无 | 无 | 灵魂收集 |
+| SFMobDrops | 附属 | 无 | 无 | 特殊掉落 |
+| SlimeCustomizer | 附属 | 无 | 无 | Slimefun 自定义 |
+| SlimeFrame | 附属 | 无 | 无 | 物品展示框扩展 |
+| SlimeGlue | 附属 | 无 | 无 | 机器连接 |
+| SlimeHUD | 附属 | 无 | 无 | HUD 显示 |
+| SmallSpace | 功能 | 无 | 无 | 微型空间玩法 |
+| PublicBin | 功能 | 无 | 无 | 公共物品箱 |
+| SoundMuffler | 功能 | 无 | 无 | 消音器 |
+| SunLight | 功能 | 无 | 无 | 时间与光照管理 |
+| SupplementalServiceableness | 功能 | 无 | 无 | 附加服务功能 |
+| Supreme | 功能 | 无 | 无 | 高级功能插件 |
+| TranscEndence | 功能 | 无 | 无 | 末地扩展 |
+| UltimateGenerators2 | 附属 | 无 | 无 | 高级能源 |
+| UseTranslatedNames | 功能 | 无 | 无 | 翻译显示 |
+| Vault | 核心依赖 | 无 | 无 | 经济/权限桥接 |
+| VillagerTrade | 功能 | 无 | 无 | 村民交易 |
+| VillagerUtil | 功能 | 无 | 无 | 村民管理 |
+| Wildernether | 功能 | 无 | 无 | 下界扩展 |
+| WorldBorder | 管理 | `/wb ...` | `worldborder.*` | 世界边界限制 |
+| XConomy | 功能 | `/money ...` | `xconomy.*` | 经济系统 |
+
+
 ---
 
 ## 插件下载与更新链接

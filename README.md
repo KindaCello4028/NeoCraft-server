@@ -796,19 +796,459 @@ sagaguild.admin
 
 
 ## 辅助与优化插件
-（待补充）
+> 这些插件用于提升服务器性能、便捷管理、增强兼容性和优化玩家体验，不直接改变玩法，但能确保服务器长期稳定运行。
+
+---
+
+### ClearLag
+- **功能介绍**  
+  自动清理掉落物、闲置生物、无用实体，减少 TPS 压力。
+- **常用命令**
+
+/lagg clear              # 立即清理 /lagg check              # 查看实体数量
+
+- **常用权限**
+
+clearlag.*
+
+- **配置要点**
+- `config.yml` 可调整清理间隔与排除物品  
+- 建议保留重要实体（如盔甲架、命名生物）
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/clearlagg.68271/)
+
+---
+
+### CoreProtect
+- **功能介绍**  
+方块与物品操作日志插件，可回滚玩家操作，防止破坏。
+- **常用命令**
+
+/co inspect               # 进入检查模式 /co rollback <参数>       # 回滚操作 /co lookup <参数>         # 查询记录
+
+- **常用权限**
+
+coreprotect.*
+
+- **配置要点**
+- 建议使用 MySQL 存储提升性能  
+- 可设置日志保留时间，平衡性能与追溯能力
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/coreprotect.8631/)
+
+---
+
+### PlugManX
+- **功能介绍**  
+热加载、卸载、重载插件，无需重启服务器。
+- **常用命令**
+
+/plugman load <插件>       # 加载插件 /plugman unload <插件>     # 卸载插件 /plugman reload <插件>     # 重载插件
+
+- **常用权限**
+
+plugman.admin
+
+- **配置要点**
+- 某些插件不支持热加载，可能导致报错  
+- 适合测试环境，不建议生产环境频繁使用
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/plugmanx.88135/)
+
+---
+
+### ProtocolLib
+- **功能介绍**  
+提供拦截与修改 Minecraft 数据包的 API，许多插件的依赖项。
+- **配置要点**
+- 无需配置，安装即可为依赖插件提供支持  
+- 更新版本需与服务器版本匹配
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/protocollib.1997/)
+
+---
+
+### SkinsRestorer
+- **功能介绍**  
+为离线模式玩家设置和保存皮肤，支持 Java 与基岩版。
+- **常用命令**
+
+/skin set <皮肤名>         # 设置皮肤 /skin clear                # 清除皮肤
+
+- **常用权限**
+
+skinsrestorer.playercmds skinsrestorer.admin
+
+- **配置要点**
+- 需要开放网络访问以获取皮肤数据  
+- 可与 Geyser/Floodgate 配合使用
+- **链接**
+- [SkinsRestorer GitHub](https://github.com/SkinsRestorer/SkinsRestorerX)
+
+---
+
+### TAB
+- **功能介绍**  
+自定义 Tab 玩家列表、侧边栏、BossBar，支持 PlaceholderAPI 动态数据。
+- **常用命令**
+
+/tab reload                # 重载配置 /tab player <玩家>         # 查看玩家信息
+
+- **常用权限**
+
+tab.admin
+
+- **配置要点**
+- `config.yml` 可自定义布局、颜色、显示数据  
+- 占位符需安装 PlaceholderAPI
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/tab-1-5-x-1-20-x-reborn.57806/)
+
+---
+
+### LiteSignIn
+- **功能介绍**  
+轻量级玩家签到插件，支持奖励与统计。
+- **常用命令**
+
+/signin                     # 打开签到界面
+
+- **常用权限**
+
+litesignin.admin
+
+- **配置要点**
+- 可自定义签到奖励  
+- 建议与经济、积分系统联动
+- **链接**
+- [SpigotMC](https://www.spigotmc.org/resources/litesignin.92041/)
+
+---
+
+### LiteXpansion
+- **功能介绍**  
+Slimefun 附属，提供额外物品与机器（此处归为辅助类）。
+- **配置要点**
+- 确保版本与 Slimefun 核心匹配  
+- 可在配置文件调整产出速度
+
+---
+
+### UseTranslatedNames
+- **功能介绍**  
+使物品、方块显示为翻译后的名称，方便多语言玩家。
+- **配置要点**
+- 确保服务器语言文件完整  
+- 可结合自定义语言包使用
+
+---
+
+### ViewSlimeChunk
+- **功能介绍**  
+显示玩家所在区块是否为史莱姆区块。
+- **配置要点**
+- 仅提供信息，不会影响生成机制
+
+---
+
+### NoCreeperCraters
+- **功能介绍**  
+防止苦力怕爆炸破坏地形。
+- **配置要点**
+- 适合保护主城和重要建筑
+
+
+---
 
 ## 基岩版互通设置
-（待补充）
+> 基岩版互通功能让 Bedrock 客户端玩家（手机、Win10 版、主机等）可以直接连接 Java 版服务器。  
+> 本服务器使用 **Geyser-Spigot + Floodgate** 实现跨平台互通，并与登录、皮肤、权限系统集成。
+
+---
+
+### Geyser-Spigot
+- **功能介绍**  
+  作为 Java ↔ 基岩互通的桥接插件，将基岩玩家的网络协议转换为 Java 协议。
+- **安装步骤**
+  1. 将 `Geyser-Spigot.jar` 放入服务器 `plugins` 文件夹。
+  2. 启动服务器生成配置文件。
+  3. 打开 `config.yml`，修改：
+     ```yaml
+     bedrock:
+       port: 19132          # 基岩版连接端口
+       address: 0.0.0.0     # 监听所有地址
+     remote:
+       address: 127.0.0.1   # Java 服务器地址
+       port: 25565          # Java 服务器端口
+     ```
+  4. 确保防火墙开放 19132 UDP 端口。
+- **常用命令**
+
+/geyser help /geyser reload
+
+- **注意事项**
+- 基岩版使用的端口是 **UDP**，Java 版是 **TCP**。
+- 与 Floodgate 配合可让基岩玩家免输入 Java 账号密码。
+- **链接**
+- [Geyser 官网](https://geysermc.org/)
+
+---
+
+### Floodgate
+- **功能介绍**  
+基岩玩家免注册登录插件，配合 Geyser 使用，为基岩玩家生成虚拟 Java 账号。
+- **安装步骤**
+1. 下载 Floodgate 对应版本，放入 `plugins` 文件夹。
+2. 启动服务器生成配置文件。
+3. 打开 `config.yml`，确认：
+   ```yaml
+   username-prefix: "."
+   ```
+   这样基岩玩家的名字会带上前缀（防止与 Java 玩家重复）。
+- **常用命令**
+
+/floodgate reload
+
+- **注意事项**
+- 基岩玩家不会与 Java 玩家冲突，但建议保持名称区分度。
+- 可以与 AuthMe 配置免登录白名单，实现 Java 玩家需要登录，基岩玩家无需输入密码。
+- **链接**
+- [Floodgate 文档](https://wiki.geysermc.org/floodgate/)
+
+---
+
+### SkinsRestorer
+- **功能介绍**  
+为基岩玩家和离线模式 Java 玩家提供皮肤功能。
+- **配置要点**
+- 基岩玩家可使用 `/skin set <皮肤名>` 来换皮肤。
+- 需开放网络访问以获取皮肤数据。
+- **链接**
+- [SkinsRestorer GitHub](https://github.com/SkinsRestorer/SkinsRestorerX)
+
+---
+
+### AuthMe / LiteSignIn 集成
+- **功能介绍**  
+保障 Java 玩家账号安全，同时为基岩玩家提供免登录功能。
+- **配置方法**
+- 在 AuthMe 配置文件中，将 Floodgate 生成的基岩玩家 UUID 列入免登录白名单。
+- LiteSignIn 同理，可通过权限节点让基岩玩家跳过登录。
+- **注意事项**
+- 即便基岩玩家免登录，也建议绑定密码以防盗号（可在菜单中引导设置）。
+
+---
+
+### ViaVersion / ViaBackwards 配合
+- **作用**  
+允许不同版本的基岩客户端通过 Geyser 连接到服务器。
+- **配置要点**
+- 确保 Via 系列插件与 Geyser 版本兼容。
+- 可在 ViaVersion 配置中限制最低连接版本，防止低版本客户端出现严重兼容问题。
+
+---
+
+### 常见问题与优化建议
+1. **基岩玩家无法连接**
+ - 检查 19132 UDP 端口是否开放。
+ - 确认 `config.yml` 地址与端口配置无误。
+2. **延迟高**
+ - Geyser 转包需要额外性能，建议服务器内存和带宽充足。
+ - 避免同时运行过多高延迟插件。
+3. **皮肤不显示**
+ - 检查 SkinsRestorer 是否正常运行。
+ - 确保网络可以访问 Mojang 与 Geyser API。
+
+
+---
 
 ## 性能与安全优化
-（待补充）
+> 这些插件与配置建议旨在保障服务器长期稳定运行，减少卡顿，防止恶意行为，提升整体体验。
+
+---
+
+### ClearLag
+- **功能介绍**  
+  自动清理掉落物、闲置生物、无用实体，减少服务器压力。
+- **优化建议**
+  - 设置清理间隔在 **2~5 分钟**，根据玩家数量调整。
+  - 使用 `exempt` 列表保护重要实体（如命名生物、展示框）。
+  - 定期检查 TPS 与实体数量，合理调整配置。
+
+---
+
+### Spark
+- **功能介绍**  
+  高性能分析工具，实时监控 TPS、内存、CPU 使用情况，生成性能报告。
+- **常用命令**
+
+/spark profiler start      # 开始性能分析 /spark profiler stop       # 停止分析并生成报告 /spark health              # 查看服务器健康状况
+
+- **优化建议**
+- 用于定位卡顿插件或任务，减少盲目调整。
+- 可导出网页报告，与开发者共享分析结果。
+- **链接**
+- [Spark GitHub](https://github.com/lucko/spark)
+
+---
+
+### CoreProtect
+- **功能介绍**  
+方块与物品日志插件，防止破坏与盗窃，支持回滚。
+- **安全建议**
+- 定期备份数据库。
+- 只给予可信管理组 `/co rollback` 权限。
+- 结合权限组细化操作权限。
+
+---
+
+### WorldGuard
+- **功能介绍**  
+区域保护插件，可阻止方块破坏、爆炸、PVP、火焰蔓延等。
+- **安全建议**
+- 主城、活动区必须设为保护区域。
+- 关闭火焰蔓延、TNT 爆炸等破坏性功能。
+- 配合 Residence 给玩家自主领地权限。
+
+---
+
+### AuthMe / LiteSignIn
+- **功能介绍**  
+玩家登录验证，防止盗号与冒名顶替。
+- **安全建议**
+- 启用密码加密存储。
+- 允许基岩玩家免登录，但需绑定唯一识别码或 IP 限制。
+- 定期清理长时间未登录的账号。
+
+---
+
+### ViaVersion / ViaBackwards
+- **功能介绍**  
+跨版本支持，让不同版本客户端进入服务器。
+- **安全建议**
+- 限制最低版本，防止旧版本客户端漏洞利用。
+- 定期更新以修复协议层漏洞。
+
+---
+
+### 其他性能优化建议
+1. **分配合理内存**  
+ - Paper 服务器建议内存：**6~10GB**（视玩家数量与插件多少）。
+2. **Paper 配置优化**  
+ - 编辑 `paper.yml`、`spigot.yml`、`bukkit.yml`，减少不必要的实体追踪与区块加载。
+3. **磁盘与备份**  
+ - 使用 SSD 提升存储性能。
+ - 定期自动备份世界与配置文件。
+4. **异步任务**  
+ - 优先使用异步处理的插件，减少主线程压力。
+5. **定期重启**  
+ - 设定每天低峰时段自动重启，释放内存与缓存。
+
+---
+
+### 安全防护插件推荐（可选）
+- **ExploitFixer**：修复已知 Minecraft 漏洞与崩服手法。  
+- **AntiVPN**：阻止 VPN 登录，防止恶意用户刷号。  
+- **CMILib + CommandBlocker**：限制特定命令执行权限。  
+- **Orebfuscator**：反 X-Ray 挖矿。
+
+
+---
 
 ## 命令与权限大全
-（待补充）
+> 以下是服务器常用插件的主要命令与权限节点汇总，方便服主管理与分配权限。
+
+---
+
+### 核心与管理类
+| 插件 | 命令 | 权限节点 | 说明 |
+|------|------|---------|------|
+| LuckPerms | `/lp editor` | `luckperms.*` | 打开 Web 编辑器管理权限 |
+| Vault | 无命令 | 无 | 提供权限/经济 API |
+| Multiverse-Core | `/mv create <世界名> <环境>` | `multiverse.core.*` | 创建/管理世界 |
+| Residence | `/res create <领地名>` | `residence.create` | 玩家创建领地 |
+| EssentialsX | `/spawn` `/home` `/tp` | `essentials.*` | 基础功能集合 |
+| DeluxeMenus | `/dm reload` | `deluxemenus.admin` | 重载菜单配置 |
+| PlayerPoints | `/points give <玩家> <数量>` | `playerpoints.admin` | 管理积分 |
+| QuickShop-Hikari | `/qs create buy/sell <价格>` | `quickshop.create` | 创建商店 |
+
+---
+
+### Slimefun 系列
+| 插件 | 命令 | 权限节点 | 说明 |
+|------|------|---------|------|
+| Slimefun | `/sf guide` `/sf cheat` | `slimefun.cheat` | 打开指南/获取物品 |
+| InfinityExpansion | 无命令 | 依赖 Slimefun | 高端科技扩展 |
+| ExoticGarden | 无命令 | 依赖 Slimefun | 新作物与食物 |
+| DynaTech | 无命令 | 依赖 Slimefun | 独特机器扩展 |
+| FinalTECH | 无命令 | 依赖 Slimefun | 高性能科技 |
+| SlimyBees | 无命令 | 依赖 Slimefun | 蜜蜂养殖系统 |
+
+---
+
+### 特色玩法类
+| 插件 | 命令 | 权限节点 | 说明 |
+|------|------|---------|------|
+| CustomNPCs | `/npc create <名字>` | `customnpcs.admin` | 创建 NPC |
+| BetterStructures | 无命令 | 无 | 世界生成建筑 |
+| QualityArmory | `/qa give <玩家> <武器ID>` | `qualityarmory.admin` | 枪械系统 |
+| SagaGuild | `/guild create <名字>` | `sagaguild.admin` | 公会系统 |
+| TerraformGenerator | 无命令 | 无 | 世界生成器 |
+
+---
+
+### 辅助与优化类
+| 插件 | 命令 | 权限节点 | 说明 |
+|------|------|---------|------|
+| ClearLag | `/lagg clear` | `clearlag.*` | 清理实体 |
+| CoreProtect | `/co rollback` | `coreprotect.*` | 回滚/日志 |
+| PlugManX | `/plugman reload <插件>` | `plugman.admin` | 热加载插件 |
+| ProtocolLib | 无命令 | 无 | 数据包 API |
+| SkinsRestorer | `/skin set <皮肤名>` | `skinsrestorer.playercmds` | 换皮肤 |
+| TAB | `/tab reload` | `tab.admin` | 自定义 Tab 列表 |
+
+---
 
 ## 插件下载与更新链接
-（待补充）
+> 以下为服务器所用插件的官方下载或更新地址，建议定期检查版本更新以保持兼容与安全。
+
+---
+
+### 核心插件
+- **LuckPerms**：[SpigotMC](https://www.spigotmc.org/resources/luckperms.28140/) / [官网](https://luckperms.net/)
+- **Vault**：[SpigotMC](https://www.spigotmc.org/resources/vault.34315/)
+- **Multiverse-Core**：[SpigotMC](https://www.spigotmc.org/resources/multiverse-core.390/)
+- **Residence**：[SpigotMC](https://www.spigotmc.org/resources/residence.11480/)
+- **EssentialsX**：[官网](https://essentialsx.net/)
+
+---
+
+### Slimefun 及附属
+- **Slimefun4**：[GitHub](https://github.com/Slimefun/Slimefun4)
+- **InfinityExpansion**：[GitHub](https://github.com/Mooy1/InfinityExpansion)
+- **ExoticGarden**：[GitHub](https://github.com/Slimefun/ExoticGarden)
+- **DynaTech**：[GitHub](https://github.com/PluginBugs/Issues-DynaTech)
+- **FinalTECH**：[GitHub](https://github.com/Slimefun-Addons/FinalTECH)
+- **SlimyBees**：[GitHub](https://github.com/Slimefun/SlimyBees)
+
+---
+
+### 特色玩法
+- **CustomNPCs**：（需搜索版本对应下载）
+- **BetterStructures**：[SpigotMC](https://www.spigotmc.org/resources/betterstructures.103906/)
+- **QualityArmory**：[GitHub](https://github.com/ZombieStriker/QualityArmory)
+- **SagaGuild**：（需搜索发布页）
+- **TerraformGenerator**：[SpigotMC](https://www.spigotmc.org/resources/terraformgenerator.75132/)
+
+---
+
+### 辅助与优化
+- **ClearLag**：[SpigotMC](https://www.spigotmc.org/resources/clearlagg.68271/)
+- **CoreProtect**：[SpigotMC](https://www.spigotmc.org/resources/coreprotect.8631/)
+- **PlugManX**：[SpigotMC](https://www.spigotmc.org/resources/plugmanx.88135/)
+- **ProtocolLib**：[SpigotMC](https://www.spigotmc.org/resources/protocollib.1997/)
+- **SkinsRestorer**：[GitHub](https://github.com/SkinsRestorer/SkinsRestorerX)
+- **TAB**：[SpigotMC](https://www.spigotmc.org/resources/tab-1-5-x-1-20-x-reborn.57806/)
 
 
 ---

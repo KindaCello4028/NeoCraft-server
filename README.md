@@ -1156,6 +1156,7 @@ Slimefun 附属，提供额外物品与机器（此处归为辅助类）。
 ---
 
 ## 命令与权限大全
+> 点击插件名可快速跳转到上方该插件的详细介绍部分。  
 > 以下是服务器常用插件的主要命令与权限节点汇总，方便服主管理与分配权限。
 
 ---
@@ -1163,50 +1164,88 @@ Slimefun 附属，提供额外物品与机器（此处归为辅助类）。
 ### 核心与管理类
 | 插件 | 命令 | 权限节点 | 说明 |
 |------|------|---------|------|
-| LuckPerms | `/lp editor` | `luckperms.*` | 打开 Web 编辑器管理权限 |
-| Vault | 无命令 | 无 | 提供权限/经济 API |
-| Multiverse-Core | `/mv create <世界名> <环境>` | `multiverse.core.*` | 创建/管理世界 |
-| Residence | `/res create <领地名>` | `residence.create` | 玩家创建领地 |
-| EssentialsX | `/spawn` `/home` `/tp` | `essentials.*` | 基础功能集合 |
-| DeluxeMenus | `/dm reload` | `deluxemenus.admin` | 重载菜单配置 |
-| PlayerPoints | `/points give <玩家> <数量>` | `playerpoints.admin` | 管理积分 |
-| QuickShop-Hikari | `/qs create buy/sell <价格>` | `quickshop.create` | 创建商店 |
+| [LuckPerms](#luckperms) | `/lp editor` | `luckperms.*` | 打开 Web 编辑器管理权限 |
+| [LuckPerms](#luckperms) | `/lp user <玩家> permission set <节点> [true/false]` | `luckperms.user` | 给玩家设置权限 |
+| [Vault](#vault) | 无命令 | 无 | 权限/经济 API，供其他插件调用 |
+| [Multiverse-Core](#multiverse-core) | `/mv create <世界名> <环境>` | `multiverse.core.create` | 创建世界 |
+| [Multiverse-Core](#multiverse-core) | `/mv tp <玩家> <世界名>` | `multiverse.teleport.self` | 传送到世界 |
+| [Residence](#residence) | `/res create <领地名>` | `residence.create` | 玩家创建领地 |
+| [Residence](#residence) | `/resadmin` | `residence.admin` | 管理所有领地 |
+| [EssentialsX](#essentialsx-系列) | `/spawn` | `essentials.spawn` | 回到出生点 |
+| [EssentialsX](#essentialsx-系列) | `/home [名字]` | `essentials.home` | 回家 |
+| [EssentialsX](#essentialsx-系列) | `/sethome <名字>` | `essentials.sethome` | 设置家 |
+| [EssentialsX](#essentialsx-系列) | `/tp <玩家>` | `essentials.tp` | 传送到玩家 |
+| [EssentialsX](#essentialsx-系列) | `/msg <玩家> <信息>` | `essentials.msg` | 私聊 |
+| [DeluxeMenus](#deluxemenus) | `/dm reload` | `deluxemenus.admin` | 重载菜单配置 |
+| [PlayerPoints](#playerpoints) | `/points give <玩家> <数量>` | `playerpoints.admin` | 增加积分 |
+| [QuickShop-Hikari](#quickshop-hikari) | `/qs create buy/sell <价格>` | `quickshop.create` | 创建商店 |
+| [QuickShop-Hikari](#quickshop-hikari) | `/qs remove` | `quickshop.remove` | 删除商店 |
 
 ---
 
-### Slimefun 系列
+### Slimefun 系列（含附属）
 | 插件 | 命令 | 权限节点 | 说明 |
 |------|------|---------|------|
-| Slimefun | `/sf guide` `/sf cheat` | `slimefun.cheat` | 打开指南/获取物品 |
-| InfinityExpansion | 无命令 | 依赖 Slimefun | 高端科技扩展 |
-| ExoticGarden | 无命令 | 依赖 Slimefun | 新作物与食物 |
-| DynaTech | 无命令 | 依赖 Slimefun | 独特机器扩展 |
-| FinalTECH | 无命令 | 依赖 Slimefun | 高性能科技 |
-| SlimyBees | 无命令 | 依赖 Slimefun | 蜜蜂养殖系统 |
+| [Slimefun](#slimefun) | `/sf guide` | `slimefun.guide` | 打开科技指南 |
+| [Slimefun](#slimefun) | `/sf cheat <物品ID> <数量>` | `slimefun.cheat` | 获取物品（管理员） |
+| [Slimefun](#slimefun) | `/sf stats` | `slimefun.stats` | 查看玩家进度 |
+| [InfinityExpansion](#infinityexpansion) | 无命令 | 依赖 Slimefun | 高端科技扩展 |
+| [ExoticGarden](#exoticgarden) | 无命令 | 依赖 Slimefun | 新作物与食物 |
+| [DynaTech](#dynatech) | 无命令 | 依赖 Slimefun | 独特机器扩展 |
+| [FinalTECH](#finaltech) | 无命令 | 依赖 Slimefun | 高性能科技 |
+| [SlimyBees](#slimybees) | 无命令 | 依赖 Slimefun | 蜜蜂养殖系统 |
+| [SlimyTreeTaps](#slimytreetaps) | 无命令 | 依赖 Slimefun | 树液收集器 |
+| [SlimeTinker](#slimetinker) | 无命令 | 依赖 Slimefun | 工具定制 |
+| [SlimefunOreChunks](#slimefunorechunks) | 无命令 | 依赖 Slimefun | 矿石碎片系统 |
+| [SlimefunLuckyBlocks](#slimefunluckyblocks) | 无命令 | 依赖 Slimefun | 幸运方块玩法 |
+| [SlimeVision](#slimevision) | 无命令 | 依赖 Slimefun | 视觉增强 |
+| [SlimefunWarfare](#slimefunwarfare) | 无命令 | 依赖 Slimefun | 科技战斗系统 |
 
 ---
 
 ### 特色玩法类
 | 插件 | 命令 | 权限节点 | 说明 |
 |------|------|---------|------|
-| CustomNPCs | `/npc create <名字>` | `customnpcs.admin` | 创建 NPC |
-| BetterStructures | 无命令 | 无 | 世界生成建筑 |
-| QualityArmory | `/qa give <玩家> <武器ID>` | `qualityarmory.admin` | 枪械系统 |
-| SagaGuild | `/guild create <名字>` | `sagaguild.admin` | 公会系统 |
-| TerraformGenerator | 无命令 | 无 | 世界生成器 |
+| [CustomNPCs](#customnpcs) | `/npc create <名字>` | `customnpcs.admin` | 创建 NPC |
+| [CustomNPCs](#customnpcs) | `/npc remove` | `customnpcs.admin` | 删除 NPC |
+| [BetterStructures](#betterstructures) | 无命令 | 无 | 世界生成建筑 |
+| [QualityArmory](#qualityarmory) | `/qa give <玩家> <武器ID>` | `qualityarmory.admin` | 给玩家武器 |
+| [QualityArmory](#qualityarmory) | `/qa menu` | `qualityarmory.menu` | 打开枪械菜单 |
+| [SagaGuild](#sagaguild) | `/guild create <名字>` | `sagaguild.create` | 创建公会 |
+| [SagaGuild](#sagaguild) | `/guild invite <玩家>` | `sagaguild.invite` | 邀请成员 |
+| [TerraformGenerator](#terraformgenerator) | 无命令 | 无 | 世界生成器 |
+| [VillagerTrade](#villagertrade--villagerutil) | 无命令 | 无 | 自定义村民交易 |
+| [VillagerUtil](#villagertrade--villagerutil) | 无命令 | 无 | 村民行为管理 |
 
 ---
 
 ### 辅助与优化类
 | 插件 | 命令 | 权限节点 | 说明 |
 |------|------|---------|------|
-| ClearLag | `/lagg clear` | `clearlag.*` | 清理实体 |
-| CoreProtect | `/co rollback` | `coreprotect.*` | 回滚/日志 |
-| PlugManX | `/plugman reload <插件>` | `plugman.admin` | 热加载插件 |
-| ProtocolLib | 无命令 | 无 | 数据包 API |
-| SkinsRestorer | `/skin set <皮肤名>` | `skinsrestorer.playercmds` | 换皮肤 |
-| TAB | `/tab reload` | `tab.admin` | 自定义 Tab 列表 |
+| [ClearLag](#clearlag) | `/lagg clear` | `clearlag.clear` | 清理实体 |
+| [ClearLag](#clearlag) | `/lagg check` | `clearlag.check` | 查看实体数量 |
+| [CoreProtect](#coreprotect) | `/co inspect` | `coreprotect.inspect` | 检查方块日志 |
+| [CoreProtect](#coreprotect) | `/co rollback` | `coreprotect.rollback` | 回滚更改 |
+| [PlugManX](#plugmanx) | `/plugman reload <插件>` | `plugman.admin` | 重载插件 |
+| [ProtocolLib](#protocollib) | 无命令 | 无 | 数据包 API |
+| [SkinsRestorer](#skinsrestorer) | `/skin set <皮肤名>` | `skinsrestorer.playercmds` | 换皮肤 |
+| [SkinsRestorer](#skinsrestorer) | `/skin clear` | `skinsrestorer.playercmds` | 清除皮肤 |
+| [TAB](#tab) | `/tab reload` | `tab.admin` | 重载配置 |
+| [LiteSignIn](#litesignin) | `/signin` | `litesignin.use` | 打开签到界面 |
+| [LiteXpansion](#litexpansion) | 无命令 | 依赖 Slimefun | 扩展物品 |
+| [UseTranslatedNames](#usetranslatednames) | 无命令 | 无 | 显示翻译名称 |
 
+---
+
+### 基岩版互通相关
+| 插件 | 命令 | 权限节点 | 说明 |
+|------|------|---------|------|
+| [Geyser-Spigot](#geyser-spigot) | `/geyser help` | `geyser.admin` | 查看帮助 |
+| [Geyser-Spigot](#geyser-spigot) | `/geyser reload` | `geyser.admin` | 重载配置 |
+| [Floodgate](#floodgate) | `/floodgate reload` | `floodgate.admin` | 重载配置 |
+| [AuthMe](#authme--litesignin) | `/login <密码>` | `authme.player` | 玩家登录 |
+| [AuthMe](#authme--litesignin) | `/register <密码> <确认密码>` | `authme.player` | 玩家注册 |
+| [AuthMe](#authme--litesignin) | `/authme reload` | `authme.admin` | 重载配置 |
 ---
 
 ## 插件下载与更新链接

@@ -1,0 +1,50 @@
+lowestYNormalCustom: -60
+highestYNormalCustom: 320
+lowestYNether: 4
+highestYNether: 120
+lowestYEnd: 0
+highestYEnd: 320
+normalCustomAirBuildingMinAltitude: 80
+normalCustomAirBuildingMaxAltitude: 120
+endAirBuildMinAltitude: 80
+endAirBuildMaxAltitude: 120
+warnAdminsAboutNewBuildings: true
+regionProtectedMessage: '&8[BetterStructures] &cDefeat the zone''s bosses to edit
+  blocks!'
+protectEliteMobsRegions: true
+setupDone: false
+modularChunkPastingSpeed: 10
+# Sets the maximum percentage of a tick that BetterStructures will use to paste builds, however many it maybe trying to generate.
+# Ranges from 0.01 to 1, where 0.01 is 1% and 1 is 100%.
+# Slower speeds will lower performance impact, but can lead to other problems such as builds suddenly popping in.
+percentageOfTickUsedForPasting: 0.2
+# Sets the distance between structures in the surface of a world.
+# Shorter distances between structures will result in more structures overall.
+distanceSurface: 31
+# Sets the distance between structures in shallow underground structure generation.
+# Shorter distances between structures will result in more structures overall.
+distanceShallow: 22
+# Sets the distance between structures in deep underground structure generation.
+# Shorter distances between structures will result in more structures overall.
+distanceDeep: 22
+# Sets the distance between structures in placed in the air.
+# Shorter distances between structures will result in more structures overall.
+distanceSky: 95
+# Sets the distance between structures liquid surfaces such as oceans.
+# Shorter distances between structures will result in more structures overall.
+distanceLiquid: 65
+# Used to tweak the randomization of the distance between structures in the surface of a world.
+# Smaller values will result in structures being more on a grid, and larger values will result in them being less predictably placed.
+maxOffsetSurface: 5
+# Used to tweak the randomization of the distance between structures in the shallow underworld of a world.
+# Smaller values will result in structures being more on a grid, and larger values will result in them being less predictably placed.
+maxOffsetShallow: 5
+# Used to tweak the randomization of the distance between structures in the deep underground of a world.
+# Smaller values will result in structures being more on a grid, and larger values will result in them being less predictably placed.
+maxOffsetDeep: 5
+# Used to tweak the randomization of the distance between structures in the sky.
+# Smaller values will result in structures being more on a grid, and larger values will result in them being less predictably placed.
+maxOffsetSky: 5
+# Used to tweak the randomization of the distance between structures on oceans.
+# Smaller values will result in structures being more on a grid, and larger values will result in them being less predictably placed.
+maxOffsetLiquid: 5
